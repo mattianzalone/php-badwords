@@ -4,8 +4,20 @@ Visualizzare a schermo il paragrafo con la relativa lunghezza e sostituire la ba
 */ -->
 
 <?php
-$badword = $_GET['ciao'];
 $text = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
-$lenghtText = strlen($text);
-echo $text.' '."La lunghezza del paragrafo è:".' '.$lenghtText;
+$textLenght = strlen($text);
+$get = $_GET["parola"];
+$textTrasform = str_replace($get,'***',$text);
 ?>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <p><?php echo $text; ?></p>
+        <p>Il paragrafo è lungo <?php echo $textLenght; ?> caratteri</p>
+        <p> <?php echo $textTrasform ?></p>
+    </body>
+</html>
